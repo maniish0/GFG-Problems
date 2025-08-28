@@ -8,19 +8,23 @@ class Solution {
             
             int mid = low + (high-low) / 2;
             
-            if(arr[mid] <= x){
-                ans = mid;
-                low = mid + 1;
+            if(arr[mid] <= x){   // "<=" becouse lower bound me hume 
+                                // " Largest number less than or equal to x" find krna h
+               
+               
+                ans = mid;       // store candidate (arr[mid] is valid floor)
+                
+                low = mid + 1; // // but maybe there is a bigger value ≤ x on the right
             }
              else {
                  
-                 high = mid - 1;
+                 high = mid - 1; // arr[mid] is too big
              }  
             
         }
         
         return ans;
-        // code here
+        
         
     }
 };
